@@ -1,0 +1,262 @@
+\documentclass{book}
+%~~~~~~~~~~Ориентация~~~~~~~~~~
+% \usepackage[landscape]{geometry} % Ландшафтная ориентация всего документа
+\usepackage{lscape} % Ландшафтная ориентация отдельных страниц (переворачивает страницу)
+% \usepackage{pdflscape} % Ландшафтная ориентация отдельных страниц (не переворачивает страницу)
+	% \begin{landscape}
+	% ...
+	% \end{landscape}
+
+%~~~~~~~~~~Математика~~~~~~~~~~
+\usepackage{amsmath,amsthm,amssymb}
+% \usepackage[warn]{mathtext} % русские буквы в формулах, с предупреждением
+
+%~~~~~~~~~~Текст~~~~~~~~~~
+\usepackage{verse}
+\usepackage[utf8]{inputenc} % кодовая страница документа
+\usepackage[T2A]{fontenc} % внутренняя кодировка TeX
+\usepackage[english, russian]{babel} % локализация и переносы
+\usepackage[babel]{csquotes} % вставка кавычек
+\usepackage{lettrine} % Буквица
+\usepackage{indentfirst} % русский стиль: отступ первого абзаца раздела
+\usepackage{anyfontsize} % решает проблему с размером шрифтов
+\usepackage{soul} % Разряженный текст \so{} и подчеркивание \ul{}
+\usepackage{soulutf8} % Поддержка UTF8 в soul
+\usepackage{ulem} % Зачеркивание
+
+%~~~~~~~~~~Графика~~~~~~~~~~
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+	\graphicspath{{Samosbrosy/}{Nonslide/}{Slide/}{Bowline/}{Buhty/}{Hook/}{Leather/}{Hitch/}{Shnurovka/}{Utolsh/}} % Папки с иллюстрациями
+\usepackage{svg} % Работа с SVG
+	\svgsetup{inkscapearea=page,inkscapepath=svgdir}
+\usepackage[most]{tcolorbox} % Рамки вокруг рисунков
+	\tcbset{boxrule=0.4pt,drop lifted shadow=black,valign=center}
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig} % Обтекание картинок текстом
+\usepackage[labelformat=simple]{subfig}
+% 	\renewcommand{\thesubfigure}{\relax} % без меток на подписях
+	\renewcommand{\thesubfigure}{\asbuk{subfigure}.} % метка subfigure: "(а)" вместо дефолтного "а"
+\usepackage[justification=centering]{caption} % Центрирует многострочные подписи к рисункам
+	\DeclareCaptionLabelFormat{cont}{#1~#2~(\asbuk{ContinuedFloat})}
+\usepackage{color,colortbl,xcolor,transparent} % работа с цветом
+	\definecolor{BlueGreen}{RGB}{49,152,255} % цвета ссылок
+	\definecolor{Violet}{RGB}{120,80,120}
+\usepackage{titlepic} % Логотип на титульной странице
+
+%~~~~~~~~~~Разное~~~~~~~~~~
+% \usepackage{ifthen} % Включаем логику \ifthenelse{условие проверки}{если НЕ истина}{если истина}
+\usepackage{epigraph} % Вставка эпиграфа
+\usepackage{qrcode} % Поддержка QR-code
+\usepackage[section,above,below]{placeins} % указывает \FloatBarrier перед каждым \section автоматически
+\usepackage{afterpage} % вставить барьер сразу после начала новой страницы
+\usepackage{flafter} % помещает флоат ПОСЛЕ первой ссылки на него
+\usepackage[
+	type={CC},
+	modifier={by-nc-sa},
+	version={4.0},
+	]{doclicense} % Лицензия
+
+%~~~~~~~~~~Таблицы~~~~~~~~~~
+\usepackage{array} % работа с таблицами
+\usepackage{booktabs} % возможность набирать красивые таблицы
+
+%~~~~~~~~~~Оглавление~~~~~~~~~~
+% \usepackage{tocloft}
+% 	\cftsetindents{section}{0.2in}{0.2in}
+% 	\cftsetindents{section}{0.4in}{0.2in}
+% 	\cftsetindents{subsection}{0.6in}{0.2in}
+% 	\cftsetindents{paragraph}{0.8in}{0.2in}
+% 	\setcounter{tocdepth}{4} % Уровень оглавления, где n=0 это chapter, 1 это chapter и section, 2 это chapter, section, и section, 3 это chapter, section, section и subsection, 4 это chapter, section, section, subsection и paragraph
+% 	\setcounter{secnumdepth}{0}
+
+%~~~~~~~~~~Библиография~~~~~~~~~~
+\usepackage[round,sort,numbers]{natbib}
+\bibliographystyle{unsrt} % Стиль библиографии
+	\makeatletter
+	\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку
+	\makeatother
+
+%~~~~~~~~~~Колонтитулы~~~~~~~~~~
+\usepackage[Sonny]{fncychap} % Варианты: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+
+%~~~~~~~~~~Водяные знаки~~~~~~~~~~
+% \usepackage{draftwatermark} % Водяные знаки на странице
+% 	\SetWatermarkText {\shortstack{Ознакомительная версия}} % Текст водяного знака
+% 	\SetWatermarkScale {0.45} % Масштабирование
+% 	\SetWatermarkLightness {0.9} % Насыщенность
+% 	\SetWatermarkAngle{55} % Угол наклона
+
+%~~~~~~~~~~Ссылки~~~~~~~~~~
+\usepackage[
+	unicode=true,
+	colorlinks=true,
+	urlcolor=BlueGreen,
+	linkcolor=Violet,
+	citecolor=Violet]{hyperref}
+
+\pdfsuppresswarningpagegroup=1                       % Убирает множественные предупреждения pdf
+
+\title{Узлы \\ и принципы их вязания}                % Заголовок
+\date{}                                              % Убирает дату. Для вставки даты - закомментировать
+\author{Дедиков Андрей Викторович}
+\titlepic{\includegraphics{logo.png}}
+
+\begin{document}                      % начало документа
+
+\maketitle
+
+\tableofcontents
+
+\newcounter{KnotNoName}\setcounter{KnotNoName}{0}
+\newcounter{LoopNoName}\setcounter{LoopNoName}{0}
+\newcounter{HitchNoName}\setcounter{HitchNoName}{0}
+\newcounter{GachnyNoName}\setcounter{GachnyNoName}{0}
+\newcounter{SamosbrosNoName}\setcounter{SamosbrosNoName}{0}
+\newcounter{SheepshankNoName}\setcounter{SheepshankNoName}{0}
+
+\chapter*{Введение}
+
+\epigraph{\textit{There's a lot of virtue \\in a round turn}}{}
+
+\lettrine[lines=3,loversize=0.2,nindent=4pt,slope=0pt]{З}{} адача этой книги состоит не в простом перечислении всех возможных или, наоборот, каких-то особенных узлов, как в большинстве подобных книг. Количество узлов (или их систем) бесконечно. Четкую грань между узлом и системой, состоящей из нескольких узлов, на мой взгляд, провести достаточно проблематично. Предлагаю рассматривать каждый узел как систему элементов, то есть более простых узлов.
+
+Если раньше, в силу понятных причин, основными \enquote{изобретателями} узлов были моряки, то теперь это, конечно же альпинисты.
+
+%TODO Добавить простые узлы.
+
+Эти простые узлы, в свою очередь, состоят из еще более простых элементов.
+
+Кроме того, любой узел можно усложнить. Существует несколько способов:
+
+\begin{itemize}
+	\item Шлаг на опоре с одного конца.
+	\item Шлаг на опоре с обоих концов.
+	\item Развернуть часть шлагов в другую сторону.
+	\item Зафиксировать ходовой конец.
+	\begin{itemize}
+		\item На опоре.
+		\item На коренном конце.
+		\item В самом узле.
+	\end{itemize}
+	\item Использовать сразу несколько способов.
+	\item Совместить вместе разные узлы.
+\end{itemize}
+
+Рисунки достаточно схематичны. Это сделано специально, именно для того, чтобы показать не внешний вид завязанного узла, а внутреннюю логику его построения.
+
+Особое место в классификации узлов занимает их название. В разных источниках можно встретить как разные названия одного и того же узла, так и разные узлы под одним названием, даже у уважаемых авторов, таких как Л.Н. Скрягин\citep{Skryagin}, И.В. Балабанов\citep{Balabanov}, Clifford W. Ashley\citep{Ashley}, и Geoffrey Budworth\citep{Budworth} и других.
+
+Чтобы было понятно, о чем речь, нужно последовать опыту древних китайских мудрецов. Перед философскими диспутами они сначала договаривались о терминах и определениях, чтобы говорить об одном и том же, а не каждый о своем.
+
+Различия колышек и штыков. И то, и другое начинается с
+
+\part{Виды узлов}
+
+\chapter{Узлы одним концом}
+
+\lettrine[lines=3,loversize=0.2,nindent=-3pt,slope=-3pt]{У}{} злы, завязанные одним концом троса, могут использоваться в разных целях. Например, для утолщения троса, предохранения его от расплетания прядей, формирования затягивающихся и незатягивающихся петель, а также для привязывания троса к чему-либо. Кроме того, существует масса декоративных вариантов, как плоских, так и объемных.
+
+\section{Узлы для утолщения троса}
+
+\input{Простые}
+
+\input{Легости}
+
+\input{Декоративные}
+
+\input{Голова турка}
+
+\input{Косички и маты}
+
+\chapter{Узлы для привязывания к опоре}
+
+\input{Простые для привязывания}
+
+\input{Самосбросы}
+
+\input{Гачные}
+
+\chapter{Петли}
+
+Петли бывают затягивающиеся, незатягивающиеся и гибридные. В затягивающихся петлях коренной конец свободно проскальзывает внутри узла, а ходовой конец зафиксирован. В незатягивающихся оба конца зафиксированы.
+
+Из любой незатягивающейся петли можно сделать затягивающуюся. Для этого петлю нужно вязать вокруг собственного коренного конца. Из любой затягивающейся петли можно сделать ограничиваемую. Кроме того, из любой затягивающейся петли можно сделать двойную затягивающуюся петлю по примеру Double Noose (рис.~\ref{ris:Double_Noose}).
+
+Гибридные петли могут быть нескольких видов:
+
+\begin{itemize}
+\item Ограничиваемые. Затягивающиеся петли, у которых можно при вязке узла предварительно ограничить максимальный или минимальный диаметр. Например, Горская петля (рис.~\ref{ris:Gorskaya}).
+\item Регулируемые. Незатягивающиеся петли, диаметр которых можно оперативно регулировать. Ходовой конец зафиксирован не жестко, его можно быстро укоротить или удлиннить.
+\item Схватывающие или Трансформируемые. Затягивающиеся петли, которые мгновенно можно превратить в незатягивающиеся.
+%TODO А есть ли петли, где и коренной и ходовой зафиксированы не жестко?
+\end{itemize}
+
+\input{Затягивающиеся петли}
+
+\input{Схватывающие}
+
+\input{Зажимаемые}
+ 
+\input{Регулируемые}
+
+\input{Незатягивающиеся петли}
+
+\input{Булинь}
+
+\input{Бухты}
+
+\chapter{Узлы несколькими концами}
+
+\lettrine[lines=3,loversize=0.2,nindent=4pt,slope=0pt]{C}{} помощью этих узлов можно соединить несколько тросов. Чаще всего, конечно, возникает необходимость связать два троса. Но возможности узлов этим не ограничиваются.
+
+Сделать это можно несколькими способами:
+
+\begin{enumerate}
+\item Узел, который специально предназначен для связывания нескольких тросов.
+\item Чужими концами. Частный случай предыдущего. Концы тросов привязываются друг к другу, потом стягиваются в единый узел. В отдельную категорию выделено, так как можно использовать любой хитч или узел для утолщения троса. %(см. Рыбацкую петлю).
+\item Петля в петлю (прямой). Петля на конце одного троса непосредственно проходит в петлю на конце другого троса, как звенья цепи. В свою очередь, такое соединение может быть двух типов - одноточечное и последовательное.
+\item Петля в петлю (узлом). Петли на концах тросов соединяются по принципу Прямого узла. Может быть так же двух типов - фиксированное и обеспечивающее какую-то степень свободы.
+\end{enumerate}
+
+\chapter{Соединение нескольких тросов}
+
+\section{Петля в петлю (Прямой способ)} %TODO Создать файл Узлы_16 (про Прямой способ)
+
+% \input{Петля в петлю (Узлом)}
+
+
+
+
+\chapter*{Заключение}
+
+\begin{wrapfigure}[5]{C}{0.33\textwidth}
+\vspace{-3ex}
+	\qrcode[height=1.5in]{mailto:dedikovav@yandex.ru}
+\end{wrapfigure}
+
+Свои предложения и замечания присылайте мне на e-mail. В электронной версии книги можно просто кликнуть по QR-коду, читатели же бумажной версии могут его просканировать с помощью мобильного телефона.
+
+% \vfill
+% 
+% \begin{wrapfigure}[5]{C}{0.33\textwidth}
+% \vspace{-3ex}
+% 	\qrcode[height=1.5in]{https://pda.litres.ru/andrey-dedikov/mayak/}
+% \end{wrapfigure}
+% 
+% Если Вам понравилась эта книга, ее можно купить на сайте
+% \href{https://pda.litres.ru/andrey-dedikov/mayak/}{Литерс}, тем самым поддержав
+% автора. Для этого достаточно отсканировать QR-код с помощью мобильного
+% телефона.
+
+\vfill
+
+\begin{center}
+	Это произведение доступно по лицензии \doclicenseNameRef \\ \doclicenseImage[imagewidth=5em]
+\end{center}
+
+% \listoffigures
+% \listoftables
+
+\bibliography{Knots}
+
+\end{document}

@@ -1,0 +1,380 @@
+\documentclass{artikel1}
+%~~~~~~~~~~Математика~~~~~~~~~~
+\usepackage{amsmath,amsthm,amssymb}
+% \usepackage[warn]{mathtext} % русские буквы в формулах, с предупреждением
+
+%~~~~~~~~~~Текст~~~~~~~~~~
+\usepackage{verse}
+\usepackage[utf8]{inputenc} % кодовая страница документа
+\usepackage[T2A]{fontenc} % внутренняя кодировка TeX
+\usepackage[english, russian]{babel} % локализация и переносы
+\usepackage[babel]{csquotes} % вставка кавычек
+\usepackage{indentfirst} % русский стиль: отступ первого абзаца раздела
+\usepackage{anyfontsize} % решает проблему с размером шрифтов
+% \usepackage{soul} % Разряженный текст \so{} и подчеркивание \ul{}
+% \usepackage{soulutf8} % Поддержка UTF8 в soul
+% \usepackage{ulem} % Зачеркивание
+
+%~~~~~~~~~~Графика~~~~~~~~~~
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+	\graphicspath{{Nonslide/}{Slide/}} % Папки с иллюстрациями
+\usepackage{svg} % Работа с SVG
+	\svgsetup{inkscapearea=page,inkscapepath=svgdir}
+\usepackage[most]{tcolorbox} % Рамки вокруг рисунков
+	\tcbset{boxrule=0.4pt,drop lifted shadow=black,valign=center}
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig} % Обтекание картинок текстом
+\usepackage[labelformat=simple]{subfig}
+% 	\renewcommand{\thesubfigure}{\relax} % без меток на подписях
+	\renewcommand{\thesubfigure}{\asbuk{subfigure}.} % метка subfigure: "(а)" вместо дефолтного "а"
+\usepackage[justification=centering]{caption} % Центрирует многострочные подписи к рисункам
+	\DeclareCaptionLabelFormat{cont}{#1~#2~(\asbuk{ContinuedFloat})}
+\usepackage{color,colortbl,xcolor,transparent} % работа с цветом
+	\definecolor{BlueGreen}{RGB}{49,152,255} % цвета ссылок
+	\definecolor{Violet}{RGB}{120,80,120}
+\usepackage{titlepic} % Логотип на титульной странице
+
+%~~~~~~~~~~Разное~~~~~~~~~~
+\usepackage{ifthen} % Включаем логику \ifthenelse{условие проверки}{если НЕ истина}{если истина}
+\usepackage{epigraph} % Вставка эпиграфа
+\usepackage{qrcode} % Поддержка QR-code
+\usepackage[section,above,below]{placeins} % указывает \FloatBarrier перед каждым \section автоматически
+\usepackage{afterpage} % вставить барьер сразу после начала новой страницы
+\usepackage{flafter} % помещает флоат ПОСЛЕ первой ссылки на него
+\usepackage[
+	type={CC},
+	modifier={by-nc-sa},
+	version={4.0},
+	]{doclicense} % Лицензия
+
+%~~~~~~~~~~Таблицы~~~~~~~~~~
+\usepackage{array} % работа с таблицами
+\usepackage{booktabs} % возможность набирать красивые таблицы
+
+%~~~~~~~~~~Библиография~~~~~~~~~~
+\usepackage[round,sort,numbers]{natbib}
+\bibliographystyle{unsrt} % Стиль библиографии
+	\makeatletter
+	\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку
+	\makeatother
+
+%~~~~~~~~~~Ссылки~~~~~~~~~~
+\usepackage[
+	unicode=true,
+	colorlinks=true,
+	urlcolor=BlueGreen,
+	linkcolor=Violet,
+	citecolor=Violet]{hyperref}
+
+\pdfsuppresswarningpagegroup=1
+
+\newcounter{SheepshankNoName}\setcounter{SheepshankNoName}{0}
+
+\begin{document}
+
+\title{Баранья нога}
+\date{}
+\author{А.В. Дедиков}
+
+\maketitle
+
+%\abstract{Здесь помещается текст аннотации.}
+
+\section{Баранья нога}
+
+Для завязывания этого узла веревку нужно сложить втрое, чтобы образовалось две свободные незатягивающиеся петли, после чего концы полуштыками накидываются на противоположные петли. Если верёвка не натянута, то узел легко развязывается. По английски - Sheepshank (баранья ляжка). Русский капитан дальнего плавания В. В. Бахтин в своем \enquote{Объяснительном морском словаре}, изданном в Санкт-Петербурге в 1894 году, этот узел называет \enquote{Колышкой} (нередко встречается и название \enquote{Калышка}).
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.4\linewidth]{Nonslide/Sheepshank_Knot}}}
+		\end{center}
+	\end{minipage}
+\caption{Баранья нога.}
+\label{ris:Sheepshank_Knot}
+\end{figure}
+
+Название \enquote{Узел Камикадзе} стало популярным после того, как британский путешественник и телеведущий канала Дискавери Беар Гриллс в одной из передач цикла \href{http://www.youtube.com/watch?v=mtgCO17QA6U||Bear}{\enquote{Выжить любой ценой}} продемонстрировал возможности этого узла при спуске на веревке по вертикальному склону. Он использовал уникальное свойство этого узла - под нагрузкой его можно разрезать в одном из трех мест.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.4\linewidth]{Nonslide/Sheepshank_Knot_kut}}}
+		\end{center}
+	\end{minipage}
+\caption{Баранья нога. Места разрезов.}
+\label{ris:Sheepshank_Knot_kut}
+\end{figure}
+
+\section{Колокольный узел}
+
+\begin{figure}[H]\centering
+	\subfloat[Обычный]{\label{ris:Bell_Ringers_Knot_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Bell_Ringers_Knot}}
+		}
+\hfill
+	\subfloat[Со штыком]{\label{ris:Bell_Ringers_Knot_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Bell_Ringers_Knot_1}}
+		}
+\hfill
+	\subfloat[Со штыком и двойной петлей]{\label{ris:Bell_Ringers_Knot_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.45\linewidth]{Nonslide/Bell_Ringers_Knot_2}}
+		}
+	\caption{Колокольный узел.}\label{ris:Bell_Ringers_Knot}
+\end{figure}
+
+Английское название - Bell Ringer’s Knot. Недовязанный Булинь петлей. Половина Бараньей ноги (рис.~\ref{ris:Sheepshank_Knot}).
+
+\section{Способы вязания Бараньей ноги}
+
+\begin{figure}[H]\centering
+	\subfloat[Обычный. Первый вариант]{\label{ris:Sheepshank_Knot_metod_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2cm]
+		{\centering
+			\includesvg[width=0.4\linewidth]{Nonslide/Sheepshank_Knot_metod}}
+		}
+\hfill
+	\subfloat[Обычный. Второй вариант]{\label{ris:Sheepshank_Knot_metod_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2cm]
+		{\centering
+			\includesvg[width=0.4\linewidth]{Nonslide/Sheepshank_Knot_metod_1}}
+		}
+\hfill
+	\subfloat[Быстрый способ]{\label{ris:Sheepshank_Knot_metod_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.4\linewidth]{Nonslide/Sheepshank_Knot_fast}}
+		}
+	\caption{Способы вязания Бараньей ноги.}\label{ris:Sheepshank_Knot_metod}
+\end{figure}
+
+\section{Кандалы}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Handcuff_Knot_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=3.5cm]
+		{\centering
+			\includesvg[width=0.31\linewidth]{Slide/Handcuff_Knot}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Handcuff_Knot_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=3.5cm]
+		{\centering
+			\includesvg[width=0.35\linewidth]{Slide/Handcuff_Knot_1}}
+		}
+	\caption{Кандалы.}\label{ris:Handcuff_Knot}
+\end{figure}
+
+Наручники, Handcuff Knot, Кандальный узел, Двойной топовый, Незатягивающееся Стремя.
+
+\section{Fireman's Chair Knot}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание. Первый вариант]{\label{ris:Firemans_Chair_Knot_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.26\linewidth]{Slide/Firemans_Chair_Knot}}
+		}
+\hfill
+	\subfloat[Завязывание. Второй вариант]{\label{ris:Firemans_Chair_Knot_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.42\linewidth]{Nonslide/Sheepshank_from_a_Handcuff_Knot_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Firemans_Chair_Knot_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.42\linewidth]{Nonslide/Sheepshank_from_a_Handcuff_Knot}}
+		}
+	\caption{Колышка с рифом.}\label{ris:Firemans_Chair_Knot}
+\end{figure}
+
+Кресло пожарного, Колышка с рифом. Handcuff Knot с дополнительным шлагом на каждой петле.
+
+\section{Tom Fool или Tom Fool's Knot}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание\\первый вариант]{\label{ris:Tom_Fool_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=4cm]
+		{\centering
+			\includesvg[width=0.38\linewidth]{Slide/Tom_Fool_or_Tom_Fools_Knot}}
+		}
+\hfill
+	\subfloat[Завязывание\\второй вариант]{\label{ris:Tom_Fool_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=4cm]
+		{\centering
+			\includesvg[width=0.28\linewidth]{Slide/Tom_Fool_or_Tom_Fools_Knot_1}}
+		}
+\hfill
+	\subfloat[Результат\\первый вариант]{\label{ris:Tom_Fool_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=3.5cm]
+		{\centering
+			\includesvg[width=0.39\linewidth]{Slide/Tom_Fool_or_Tom_Fools_Knot_2}}
+		}
+\hfill
+	\subfloat[Результат\\второй вариант]{\label{ris:Tom_Fool_4}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=3.5cm]
+		{\centering
+			\includesvg[width=0.27\linewidth]{Slide/Tom_Fool_or_Tom_Fools_Knot_3}}
+		}
+	\caption{Tom Fool или Tom Fool's Knot.}\label{ris:Tom_Fool}
+\end{figure}
+
+Дурацкий, Пьяный, Узел Томаса (глупого Томаса) или Узел Дураков. Фактически, обычный Бантик.
+
+\section{Колышка Томаса (скрот)}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Sheepshank_based_on_the_Tom_Fools_Knot_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Sheepshank_based_on_the_Tom_Fools_Knot_1}}
+		}
+\vfill
+	\subfloat[Результат]{\label{ris:Sheepshank_based_on_the_Tom_Fools_Knot_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Sheepshank_based_on_the_Tom_Fools_Knot}}
+		}
+	\caption{Колышка Томаса (скрот).}\label{ris:Sheepshank_based_on_the_Tom_Fools_Knot}
+\end{figure}
+
+Баранья нога из Tom Fool’s Knot (рис.~\ref{ris:Tom_Fool}). Другой вариант Fireman’s Chair Knot.
+
+\section{Способы фиксации петель Бараньей ноги}
+
+\begin{figure}[H]\centering
+	\subfloat[С марками]{\label{ris:Fix_Sheepshank_Knot_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Fix_Sheepshank_Knot}}
+		}
+\vfill
+	\subfloat[Со свайками]{\label{ris:Fix_Sheepshank_Knot_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Fix_Sheepshank_Knot_1}}
+		}
+	\caption{Способы фиксации петель Бараньей ноги.}\label{ris:Fix_Sheepshank_Knot}
+\end{figure}
+
+Четыре способа фиксации петель Бараньей ноги. В вариантах А используется наложение марок. В вариантах Б используется свайка, как с маркой так и без.
+
+\section{Колышка со сваечными узлами}
+
+\begin{figure}[H]\centering
+\begin{minipage}{1\linewidth}
+	\begin{center}
+		\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering{\includesvg[width=0.45\linewidth]{Nonslide/Sheepshank_with_Marlingspike_Hitches}}}
+	\end{center}
+\end{minipage}
+\caption{Колышка со сваечными узлами.}
+\label{ris:Sheepshank_with_Marlingspike_Hitches}
+\end{figure}
+
+По английски - Sheepshank with Marlingspike Hitches.
+
+\section{Колышка со Штыками на концах}
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.45\linewidth]{Nonslide/Sheepshank_with_Clove_Hitches_at_each_end}}}
+		\end{center}
+	\end{minipage}
+\caption{Колышка с Clove Hitches на концах.}
+\label{ris:Sheepshank_with_Clove_Hitches_at_each_end}
+\end{figure}
+
+\section{Sheepshank with a Sword Knot}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Sheepshank_with_a_Sword_Knot_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Sheepshank_with_a_Sword_Knot}}
+		}
+\vfill
+	\subfloat[Результат]{\label{ris:Sheepshank_with_a_Sword_Knot_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Sheepshank_with_a_Sword_Knot_1}}
+		}
+	\caption{Sheepshank with a Sword Knot.}\label{ris:Sheepshank_with_a_Sword_Knot}
+\end{figure}
+
+\addtocounter{SheepshankNoName}{1}
+
+Sheepshank with a Sword Knot, Navy Sheepshank, Man-o’-War Sheepshank.
+
+\section{Баранья нога без названия \arabic{SheepshankNoName}}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Sheepshank_noname_1_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Sheepshank_noname}}
+		}
+\vfill
+	\subfloat[Результат]{\label{ris:Sheepshank_noname_1_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.5\linewidth]{Nonslide/Sheepshank_noname_1}}
+		}
+	\caption{Баранья нога без названия \arabic{SheepshankNoName}.}\label{ris:Sheepshank_noname_1}
+\end{figure}
+
+\section{Затягивающаяся Баранья нога}
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.45\linewidth]{Nonslide/Sheepshank_Knot_slide}}}
+		\end{center}
+	\end{minipage}
+\caption{Затягивающаяся Баранья нога.}
+\label{ris:Sheepshank_Knot_slide}
+\end{figure}
+
+Затягивающийся Sheepshank Knot (рис.~\ref{ris:Sheepshank_Knot}), который фиксируется узлами. Обратите внимание, на обоих концах получаются Булини.
+
+\section*{Заключение}
+
+\begin{wrapfigure}[5]{R}{0.35\linewidth}
+	\vspace{-7ex}
+	\qrcode[height=1.2in]{mailto:dedikovav+book@googlemail.com}
+\end{wrapfigure}
+
+Свои предложения и замечания присылайте мне на e-mail. В электронной версии книги можно кликнуть по QR-коду, читатели же бумажной версии могут его просто просканировать с помощью мобильного телефона.
+
+\vfill
+
+% \begin{wrapfigure}[5]{C}{0.3\textwidth}
+% \vspace{-3ex}
+% 	\qrcode[height=1.2in]{https://pda.litres.ru/andrey-dedikov/mayak/}
+% \end{wrapfigure}
+
+% Если Вам понравилась эта книга, ее можно купить на сайте
+% \href{https://pda.litres.ru/andrey-dedikov/mayak/}{Литерс}, тем самым поддержав
+% автора. Для этого достаточно отсканировать QR-код с помощью мобильного
+% телефона.
+% 
+% \vfill
+
+\begin{center}
+	Это произведение доступно по лицензии \doclicenseNameRef \\ \doclicenseImage[imagewidth=5em]
+\end{center}
+
+\end{document}

@@ -1,0 +1,427 @@
+\documentclass{artikel1}
+%~~~~~~~~~~Математика~~~~~~~~~~
+\usepackage{amsmath,amsthm,amssymb}
+% \usepackage[warn]{mathtext} % русские буквы в формулах, с предупреждением
+
+%~~~~~~~~~~Текст~~~~~~~~~~
+\usepackage{verse}
+\usepackage[utf8]{inputenc} % кодовая страница документа
+\usepackage[T2A]{fontenc} % внутренняя кодировка TeX
+\usepackage[english, russian]{babel} % локализация и переносы
+\usepackage[babel]{csquotes} % вставка кавычек
+\usepackage{indentfirst} % русский стиль: отступ первого абзаца раздела
+\usepackage{anyfontsize} % решает проблему с размером шрифтов
+% \usepackage{soul} % Разряженный текст \so{} и подчеркивание \ul{}
+% \usepackage{soulutf8} % Поддержка UTF8 в soul
+% \usepackage{ulem} % Зачеркивание
+
+%~~~~~~~~~~Графика~~~~~~~~~~
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+	\graphicspath{Bowline/} % Папки с иллюстрациями
+\usepackage{svg} % Работа с SVG
+	\svgsetup{inkscapearea=page,inkscapepath=svgdir}
+\usepackage[most]{tcolorbox} % Рамки вокруг рисунков
+	\tcbset{boxrule=0.4pt,drop lifted shadow=black,valign=center}
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig} % Обтекание картинок текстом
+\usepackage[labelformat=simple]{subfig}
+% 	\renewcommand{\thesubfigure}{\relax} % без меток на подписях
+	\renewcommand{\thesubfigure}{\asbuk{subfigure}.} % метка subfigure: "(а)" вместо дефолтного "а"
+\usepackage[justification=centering]{caption} % Центрирует многострочные подписи к рисункам
+	\DeclareCaptionLabelFormat{cont}{#1~#2~(\asbuk{ContinuedFloat})}
+\usepackage{color,colortbl,xcolor,transparent} % работа с цветом
+	\definecolor{BlueGreen}{RGB}{49,152,255} % цвета ссылок
+	\definecolor{Violet}{RGB}{120,80,120}
+\usepackage{titlepic} % Логотип на титульной странице
+
+%~~~~~~~~~~Разное~~~~~~~~~~
+\usepackage{ifthen} % Включаем логику \ifthenelse{условие проверки}{если НЕ истина}{если истина}
+\usepackage{epigraph} % Вставка эпиграфа
+\usepackage{qrcode} % Поддержка QR-code
+\usepackage[section,above,below]{placeins} % указывает \FloatBarrier перед каждым \section автоматически
+\usepackage{afterpage} % вставить барьер сразу после начала новой страницы
+\usepackage{flafter} % помещает флоат ПОСЛЕ первой ссылки на него
+\usepackage[
+	type={CC},
+	modifier={by-nc-sa},
+	version={4.0},
+	]{doclicense} % Лицензия
+
+%~~~~~~~~~~Таблицы~~~~~~~~~~
+\usepackage{array} % работа с таблицами
+\usepackage{booktabs} % возможность набирать красивые таблицы
+
+%~~~~~~~~~~Библиография~~~~~~~~~~
+\usepackage[round,sort,numbers]{natbib}
+\bibliographystyle{unsrt} % Стиль библиографии
+	\makeatletter
+	\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку
+	\makeatother
+
+%~~~~~~~~~~Ссылки~~~~~~~~~~
+\usepackage[
+	unicode=true,
+	colorlinks=true,
+	urlcolor=BlueGreen,
+	linkcolor=Violet,
+	citecolor=Violet]{hyperref}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}                                     % начало документа
+
+\title{Фиксация Булиня}
+\date{}
+\author{А.В. Дедиков}
+
+\maketitle
+
+Булинь (другое название - Беседочный узел) по праву называют ``Король узлов''! Он сочетает в себе простоту и надежность, никогда намертво не затягивается, вяжется очень легко. Его можно завязать даже одной рукой в полной темноте.
+
+Этот узел известен уже несколько тысяч лет, им пользовались еще древнеегипетские и финикийские моряки, а англичане его завязывание описывали в стихах:
+
+~\
+\begin{verse}%[\versewidth]
+Lay the bight to make a hole \\
+Then under the back and around the pole \\
+Over the top and thru the eye \\
+Cinch it tight and let it lie.
+\end{verse}
+~\
+
+Но при всех достоинствах есть у Булиня и недостаток. Иногда при пульсирующих нагрузках, особенно на скользких веревках, он может развязаться. Чтобы застраховаться от этого нужно как-то зафиксировать ходовой конец. Для этого существует несколько способов:
+
+\section{Наложение марки}
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.32\linewidth]{Bowline/Besedochny_marka}}}
+		\end{center}
+	\end{minipage}
+\caption{Наложение марки.}
+\label{ris:Besedochny_marka}
+\end{figure}
+
+Простой и надежный вариант. То есть, возможность развязывания такого узла не подразумевается. Недостаток - долго и трудоемко. Как правило, делают это один раз и навсегда. В связи с этим смысл использования именно Беседочного узла остается только при оперативной необходимости увеличения размера имеющейся незатягивающейся петли. В этом случае узел фактически вяжется коренным концом, который нужно пропустить через фиксированную петлю ходового. Если он достаточно длинный, то сделать это будет проблематично, а если он где-нибудь уже закреплен, то и невозможно.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.32\linewidth]{Bowline/Besedochny_marka_1}}}
+		\end{center}
+	\end{minipage}
+\caption{Завязывание коренным концом.}
+\label{ris:Besedochny_marka_sposob}
+\end{figure}
+
+\section{Узел для утолщения}
+
+На ходовом конце делается Простой узел, чтобы конец не мог пролезть внутрь затянутого узла. Узлов для утолщения троса существует великое множество, можно использовать любой.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.32\linewidth]{Bowline/Besedochny_utolsh}}}
+		\end{center}
+	\end{minipage}
+\caption{Узел для утолщения ходового конца.}
+\label{ris:Besedochny_utolsh}
+\end{figure}
+
+\section{Контрольный узел}
+
+Можно использовать Простой узел, можно какой-либо из Штыков, а можно любую затягивающуюся или незатягивающуюся петлю (тот же Булинь, например).
+
+\begin{figure}[H]\centering
+	\subfloat[На ходовом конце.]{\label{ris:Besedochny_kontrol_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny_po_petle}}
+		}
+\hfill
+	\subfloat[На коренном конце.]{\label{ris:Besedochny_kontrol_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny_na_korennom}}
+		}
+	\caption{Контрольный узел.}\label{ris:Besedochny_kontrol}
+\end{figure}
+
+\section{Удвоение элементов узла}
+
+Для повышения надежности можно применить метод удвоения одного или сразу нескольких элементов узла.
+
+\subsection{Альпинистский Беседочный}
+
+Английское название - Mountaineering Bowline. Удваивается петля коренного конца.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.32\linewidth]{Bowline/Besedochny-Mountaineering}}}
+		\end{center}
+	\end{minipage}
+\caption{Альпинистский Беседочный.}
+\label{ris:Besedochny-Mountaineering}
+\end{figure}
+
+\subsection{Альпинистский Беседочный 2}
+
+Узел, в котором удваивается петля ходового конца.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.32\linewidth]{Bowline/Besedochny-Mountaineering-2}}}
+		\end{center}
+	\end{minipage}
+\caption{Альпинистский Беседочный 2.}
+\label{ris:Besedochny-Mountaineering-2}
+\end{figure}
+
+\subsection{Двойной Альпинистский Беседочный}
+
+Он же Mountaineering Double Bowline. Удваиваются петли и коренного, и ходового конца.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.32\linewidth]{Bowline/Besedochny-Mountaineering-Double}}}
+		\end{center}
+	\end{minipage}
+\caption{Двойной Альпинистский Беседочный.}
+\label{ris:Besedochny-Mountaineering-Double}
+\end{figure}
+
+\subsection{Водный булинь}
+
+По английски - Water Bowline. Тоже удваивается петля на коренном конце, но немного по другому принципу. Не просто шлагами, а в виде Штыков. Классический вариант с использованием Простого штыка, но точно так же работать будет и с другими, например, с Cow Hitch.
+
+\begin{figure}[H]\centering
+	\subfloat[С использованием Clove Hitch.]{\label{ris:Besedochny-Water_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-Water}}
+		}
+\hfill
+	\subfloat[С использованием Cow Hitch.]{\label{ris:Besedochny-Water_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-Water-2}}
+		}
+	\caption{Водный Булинь.}\label{ris:Besedochny-Water}
+\end{figure}
+
+\section{Фиксирующийся Укорачивающий Булинь}
+
+Завязывая Булинь сложенным вдвое ходовым концом получим узел, который называется Укорачивающий Булинь или Bowline Shortening. После его вязки ходовой конец можно заправить в им же образованную петлю и затянуть.
+
+\begin{figure}[H]\centering
+	\subfloat[Первый вариант.]{\label{ris:Double_Bowline_Brimingham_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Double_Bowline_1}}
+		}
+\hfill
+	\subfloat[Второй вариант.]{\label{ris:Double_Bowline_Brimingham_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Double_Bowline_2}}
+		}
+	\caption{Фиксирующийся Укорачивающий Булинь.}\label{ris:Double_Bowline_Brimingham}
+\end{figure}
+
+\section{Ходовой конец внутри узла}
+
+Можно зажать ходовой конец непосредственно внутри узла. Тем самым осуществляется фиксация и вероятность проскальзывания сводится к нулю.
+
+\subsection{Yosemite Bowline}
+
+У этого способа даже есть собственное название - Bowline with a Yosemite backup. Русское название - Полуторный булинь. Ходовой конец выходит вверх параллельно коренному концу. После аккуратного затягивания узел выглядит очень красиво и гармонично.
+
+\begin{figure}[H]\centering
+	\subfloat[Первый вариант.]{\label{ris:Besedochny-Yosemite_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-Yosemite}}
+		}
+\hfill
+	\subfloat[Второй вариант.]{\label{ris:Besedochny-Yosemite_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-Yosemite-3}}
+		}
+	\caption{Yosemite Bowline.}\label{ris:Besedochny-Yosemite}
+\end{figure}
+
+\subsection{Ходовой конец параллелен коренному}
+
+Другие варианты, где ходовой конец параллелен коренному. Собственных названий не имеют.
+
+\begin{figure}[H]\centering
+	\subfloat[Первый вариант.]{\label{ris:Besedochny_hodovoy_inside_6}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-Yosemite-2}}
+		}
+\hfill
+	\subfloat[Второй вариант.]{\label{ris:Besedochny_hodovoy_inside_4}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-zaprav-4}}
+		}
+\hfill
+	\subfloat[Третий вариант.]{\label{ris:Besedochny_hodovoy_inside_5}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-zaprav-5}}
+		}
+	\caption{Ходовой конец параллелен коренному.}\label{ris:Besedochny_hodovoy_inside_paral}
+\end{figure}
+
+Обратите внимание, вариант на рис.~(\ref{ris:Besedochny_hodovoy_inside_6}) вяжется из Левостороннего Булиня.
+
+% TODO Проверить первый и второй варианты (коренной станет ходовым)
+
+\subsection{Ходовой конец перпендикулярен коренному}
+
+У следующих вариантов ходовой конец перпендикулярен коренному. Собственных названий эти узлы так же не имеют.
+
+\begin{figure}[H]\centering
+	\subfloat[Первый вариант.]{\label{ris:Besedochny_hodovoy_inside_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-zaprav}}
+		}
+\hfill
+	\subfloat[Второй вариант.]{\label{ris:Besedochny_hodovoy_inside_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-zaprav-3}}
+		}
+\hfill
+	\subfloat[Третий вариант.]{\label{ris:Besedochny_hodovoy_inside_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny-zaprav-2}}
+		}
+	\caption{Ходовой конец перпендикулярен коренному.}\label{ris:Besedochny_hodovoy_inside_perp}
+\end{figure}
+
+\section{Fool's Bowline}
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.32\linewidth]{Bowline/Fools_Bowline}}}
+		\end{center}
+	\end{minipage}
+\caption{Fool's Bowline.}
+\label{ris:Fools_Bowline}
+\end{figure}
+
+Затянув ходовой конец, получим еще один вариант его фиксации, где он перпендикулярен коренному как на рис.~\ref{ris:Besedochny_hodovoy_inside_perp}. Если его не затягивать, а просто дополнительно зафиксировать каким-либо способом (например, полуштыком на коренном конце) - получим узел с двумя незатягивающимися петлями, величину одной из которых можно оперативно регулировать.
+
+% TODO По своим свойствам (одна глухая, одна скользящая петля) похож на Китайский Беседочный с двумя петлями.
+
+\section{Совмещение разных узлов}
+
+% TODO Добавить ссылки на узлы.
+
+Для фиксации Беседочного узла его можно совместить с другими узлами.
+
+\subsection{Совмещение с Удавкой}
+
+Fool's Bowline (рис.~\ref{ris:Fools_Bowline}) совмещается с Удавкой.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.35\linewidth]{Bowline/Besedochny-udav}}}
+		\end{center}
+	\end{minipage}
+\caption{Совмещение с Удавкой.}
+\label{ris:Besedochny-udav}
+\end{figure}
+
+\subsection{Совмещение с Cow Hitch}
+
+Если Булинь предполагается использовать для привязывания к чему-либо, то очевидно, что существует два способа. Можно обвязать его непосредственно вокруг опоры, а можно, как и любую другую незатягивающуюся петлю, привязать его Cow Hitch или другим аналогичным узлом.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.35\linewidth]{Bowline/Besedochny_Cow_Hitch}}}
+		\end{center}
+	\end{minipage}
+	\caption{Совмещение с Cow Hitch.}
+	\label{ris:Besedochny_Cow_Hitch}
+\end{figure}
+
+В этом случае дополнительная фиксация самого Булиня практически не требуется, так как стороны его петли не испытывают разнонаправленных пульсирующих нагрузок. Но и эту систему узлов желающие могут усовершенствовать.
+
+\begin{figure}[H]\centering
+	\subfloat[Снаружи. Первый вариант.]{\label{ris:Besedochny_Cow_Hitch_fix_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny_Cow_Hitch_1}}
+		}
+\hfill
+	\subfloat[Снаружи. Второй вариант.]{\label{ris:Besedochny_Cow_Hitch_fix_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny_Cow_Hitch_2}}
+		}
+\hfill
+	\subfloat[Изнутри. Первый вариант.]{\label{ris:Besedochny_Cow_Hitch_fix_4}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny_Cow_Hitch_4}}
+		}
+\hfill
+	\subfloat[Изнутри. Второй вариант.]{\label{ris:Besedochny_Cow_Hitch_fix_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Bowline/Besedochny_Cow_Hitch_3}}
+		}
+	\caption{Фиксация с Cow Hitch.}\label{ris:Besedochny_Cow_Hitch_fix}
+\end{figure}
+
+\section*{Заключение}
+
+\begin{wrapfigure}[5]{R}{0.35\linewidth}
+	\vspace{-7ex}
+	\qrcode[height=1.2in]{mailto:dedikovav+book@googlemail.com}
+\end{wrapfigure}
+
+Свои предложения и замечания присылайте мне на e-mail. В электронной версии книги можно кликнуть по QR-коду, читатели же бумажной версии могут его просто просканировать с помощью мобильного телефона.
+
+\vfill
+
+% \begin{wrapfigure}[5]{C}{0.3\textwidth}
+% \vspace{-3ex}
+% 	\qrcode[height=1.2in]{https://pda.litres.ru/andrey-dedikov/mayak/}
+% \end{wrapfigure}
+
+% Если Вам понравилась эта книга, ее можно купить на сайте
+% \href{https://pda.litres.ru/andrey-dedikov/mayak/}{Литерс}, тем самым поддержав
+% автора. Для этого достаточно отсканировать QR-код с помощью мобильного
+% телефона.
+% 
+% \vfill
+
+\begin{center}
+	Это произведение доступно по лицензии \doclicenseNameRef \\ \doclicenseImage[imagewidth=5em]
+\end{center}
+
+\end{document}

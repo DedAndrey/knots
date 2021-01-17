@@ -1,0 +1,225 @@
+\documentclass{artikel1}
+%~~~~~~~~~~Математика~~~~~~~~~~
+\usepackage{amsmath,amsthm,amssymb}
+% \usepackage[warn]{mathtext} % русские буквы в формулах, с предупреждением
+
+%~~~~~~~~~~Текст~~~~~~~~~~
+\usepackage{verse}
+\usepackage[utf8]{inputenc} % кодовая страница документа
+\usepackage[T2A]{fontenc} % внутренняя кодировка TeX
+\usepackage[english, russian]{babel} % локализация и переносы
+\usepackage[babel]{csquotes} % вставка кавычек
+\usepackage{indentfirst} % русский стиль: отступ первого абзаца раздела
+\usepackage{anyfontsize} % решает проблему с размером шрифтов
+% \usepackage{soul} % Разряженный текст \so{} и подчеркивание \ul{}
+% \usepackage{soulutf8} % Поддержка UTF8 в soul
+% \usepackage{ulem} % Зачеркивание
+
+%~~~~~~~~~~Графика~~~~~~~~~~
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+	\graphicspath{{Nonslide/}{Slide/}} % Папки с иллюстрациями
+\usepackage{svg} % Работа с SVG
+	\svgsetup{inkscapearea=page,inkscapepath=svgdir}
+\usepackage[most]{tcolorbox} % Рамки вокруг рисунков
+	\tcbset{boxrule=0.4pt,drop lifted shadow=black,valign=center}
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig} % Обтекание картинок текстом
+\usepackage[labelformat=simple]{subfig}
+% 	\renewcommand{\thesubfigure}{\relax} % без меток на подписях
+	\renewcommand{\thesubfigure}{\asbuk{subfigure}.} % метка subfigure: "(а)" вместо дефолтного "а"
+\usepackage[justification=centering]{caption} % Центрирует многострочные подписи к рисункам
+	\DeclareCaptionLabelFormat{cont}{#1~#2~(\asbuk{ContinuedFloat})}
+\usepackage{color,colortbl,xcolor,transparent} % работа с цветом
+	\definecolor{BlueGreen}{RGB}{49,152,255} % цвета ссылок
+	\definecolor{Violet}{RGB}{120,80,120}
+\usepackage{titlepic} % Логотип на титульной странице
+
+%~~~~~~~~~~Разное~~~~~~~~~~
+\usepackage{ifthen} % Включаем логику \ifthenelse{условие проверки}{если НЕ истина}{если истина}
+\usepackage{epigraph} % Вставка эпиграфа
+\usepackage{qrcode} % Поддержка QR-code
+\usepackage[section,above,below]{placeins} % указывает \FloatBarrier перед каждым \section автоматически
+\usepackage{afterpage} % вставить барьер сразу после начала новой страницы
+\usepackage{flafter} % помещает флоат ПОСЛЕ первой ссылки на него
+\usepackage[
+	type={CC},
+	modifier={by-nc-sa},
+	version={4.0},
+	]{doclicense} % Лицензия
+
+%~~~~~~~~~~Таблицы~~~~~~~~~~
+\usepackage{array} % работа с таблицами
+\usepackage{booktabs} % возможность набирать красивые таблицы
+
+%~~~~~~~~~~Библиография~~~~~~~~~~
+\usepackage[round,sort,numbers]{natbib}
+\bibliographystyle{unsrt} % Стиль библиографии
+	\makeatletter
+	\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку
+	\makeatother
+
+%~~~~~~~~~~Ссылки~~~~~~~~~~
+\usepackage[
+	unicode=true,
+	colorlinks=true,
+	urlcolor=BlueGreen,
+	linkcolor=Violet,
+	citecolor=Violet]{hyperref}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}                                     % начало документа
+
+\title{Эскимосский, Якутский, Калмыцкий, Чабанский и Скифовский узлы}
+\date{}
+\author{А.В. Дедиков}
+
+\maketitle
+
+\section{Эскимосский Булинь}
+
+Он же Казачий или Казацкий узел, Эскимосская петля, Крабья петля, Затягивающийся огон, Затяжной огон. Английские названия - Eskimo Bowline, Crab Noose, Crabber’s Eye Knot или Crossing Running Knot. Является трансформируемой петлей. То есть затягивающаяся петля путем более сильного затягивания (обычно рывком) превращается в незатягивающуюся. В качестве трансформируемой петли в литературе нигде не рассматривался, только в качестве незатягивающейся петли.
+
+Способов вязки у этого узла существует не меньше, чем у Беседочного. Узлы имеют одинаковую структуру и отличаются всего лишь одной деталью - в Беседочном ходовой конец проходит через петлю коренного снизу-вверх и огибает коренной конец, а в Эскимосском наоборот, сверху-вниз и огибает боковину рабочей петли. Различные варианты усложнения и развития узла также можно позаимствовать у Беседочного.
+
+%TODO про поворот петли коренного узла по часовой стрелке - ничего не получится
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Kazak_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Slide/Crab_noose}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Kazak_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=2cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Slide/Crab_noose_1}}
+		}
+\hfill
+	\subfloat[Быстроразвязывающийся вариант]{\label{ris:Kazak_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Slide/Kazak}}
+		}
+	\caption{Эскимосский Булинь.}\label{ris:Kazak}
+\end{figure}
+
+\section{Калмыцкий узел}
+
+Очень похож на Эскимосский булинь в быстроразвязывающемся варианте (рис.~\ref{ris:Kazak_3}). Однако, петля коренного конца повернута не против часовой стрелки, а в обратную сторону, в связи с чем ходовой конец ею зажимается несколько по-другому.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.4\linewidth]{Nonslide/Kalmyk}}}
+		\end{center}
+	\end{minipage}
+\caption{Калмыцкий узел.}
+\label{ris:Kalmyk}
+\end{figure}
+
+\section{Чабанский узел}
+
+Развитие быстроразвязывающегося Эскимосского булиня и Калмыцкого узла. Ходовой конец страхует узел, временно блокируя от возможности случайного саморазвязывания. Отличие только в направлении прохождения ходового конца через фиксируемую петлю. Разница не принципиальна.
+
+\begin{figure}[H]\centering
+	\subfloat[Эскимосский.\\Первый вариант.]{\label{ris:Chaban_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Chaban}}
+		}
+\hfill
+	\subfloat[Калмыцкий.\\Первый вариант.]{\label{ris:Chaban_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Chaban_2}}
+		}
+\hfill
+	\subfloat[Эскимосский.\\Второй вариант.]{\label{ris:Chaban_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Chaban_4}}
+		}
+\hfill
+	\subfloat[Калмыцкий.\\Второй вариант.]{\label{ris:Chaban_4}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Chaban_5}}
+		}
+\hfill
+	\subfloat[Эскимосский.\\Третий вариант.]{\label{ris:Chaban_5}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Chaban_1}}
+		}
+\hfill
+	\subfloat[Калмыцкий.\\Третий вариант.]{\label{ris:Chaban_6}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Chaban_3}}
+		}
+	\caption{Чабанский узел.}\label{ris:Chaban}
+\end{figure}
+
+\section{Якутский узел}
+
+По-якутски этот узел называется \enquote{Туомтуу баайыы}. Другое русское название - Распускной узел. Интереснейшее исследование есть \href{http://ilin-yakutsk.narod.ru/2002-4/savinov.htm}{в журнале \enquote{Илин} за 2002г}. Там, в частности, описаны способы вязки, а так же отличия Калмыцкого и Якутского узлов.
+
+Вновь \enquote{открыт} \href{http://www.muzel.ru/article/za/skifovsky.htm}{Юрием Елизаровым}, где он называет его Скифовский узел.
+
+\begin{figure}[H]\centering
+	\subfloat[Результат]{\label{ris:Skif_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Skif}}
+		}
+\vfill
+	\subfloat[Точка отличия от\\Калмыцкого узла]{\label{ris:Skif_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Skif_0}}
+		}
+\hfill
+	\subfloat[Точка отличия от\\Беседочного узла]{\label{ris:Skif_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Nonslide/Skif_00}}
+		}
+	\caption{Якутский узел.}\label{ris:Skif}
+\end{figure}
+
+На рисунке выше красными кружками отмечены единственные пересечения, которые отличают Якутский (Скифовский) от Калмыцкого и Беседочного узлов.
+
+\section{Простой Скифовский узел}
+
+Тоже самое, но без возврата ходового конца обратно для быстрого развязывания.
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.4\linewidth]{Nonslide/Skif_2}}}
+		\end{center}
+	\end{minipage}
+\caption{Простой Скифовский узел.}
+\label{ris:Skif_simpl}
+\end{figure}
+
+\section*{Заключение}
+
+\begin{wrapfigure}[5]{R}{0.35\linewidth}
+	\vspace{-7ex}
+	\qrcode[height=1.2in]{mailto:dedikovav+book@googlemail.com}
+\end{wrapfigure}
+
+Свои вопросы, предложения и замечания присылайте мне на e-mail. В электронной версии статьи достаточно кликнуть по QR-коду, в бумажной версии можно его просканировать с помощью мобильного телефона.
+
+\vfill
+
+\begin{center}
+	Это произведение доступно по лицензии \doclicenseNameRef \\ \doclicenseImage[imagewidth=5em]
+\end{center}
+
+\end{document}

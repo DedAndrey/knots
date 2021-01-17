@@ -1,0 +1,574 @@
+\documentclass{artikel1}
+%~~~~~~~~~~Математика~~~~~~~~~~
+\usepackage{amsmath,amsthm,amssymb}
+% \usepackage[warn]{mathtext} % русские буквы в формулах, с предупреждением
+
+%~~~~~~~~~~Текст~~~~~~~~~~
+\usepackage{verse}
+\usepackage[utf8]{inputenc} % кодовая страница документа
+\usepackage[T2A]{fontenc} % внутренняя кодировка TeX
+\usepackage[english, russian]{babel} % локализация и переносы
+\usepackage[babel]{csquotes} % вставка кавычек
+\usepackage{indentfirst} % русский стиль: отступ первого абзаца раздела
+\usepackage{anyfontsize} % решает проблему с размером шрифтов
+% \usepackage{soul} % Разряженный текст \so{} и подчеркивание \ul{}
+% \usepackage{soulutf8} % Поддержка UTF8 в soul
+% \usepackage{ulem} % Зачеркивание
+
+%~~~~~~~~~~Графика~~~~~~~~~~
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+	\graphicspath{Samosbrosy/} % Папки с иллюстрациями
+\usepackage{svg} % Работа с SVG
+	\svgsetup{inkscapearea=page,inkscapepath=svgdir}
+\usepackage[most]{tcolorbox} % Рамки вокруг рисунков
+	\tcbset{boxrule=0.4pt,drop lifted shadow=black,valign=center}
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig} % Обтекание картинок текстом
+\usepackage[labelformat=simple]{subfig}
+% 	\renewcommand{\thesubfigure}{\relax} % без меток на подписях
+	\renewcommand{\thesubfigure}{\asbuk{subfigure}.} % метка subfigure: "(а)" вместо дефолтного "а"
+\usepackage[justification=centering]{caption} % Центрирует многострочные подписи к рисункам
+	\DeclareCaptionLabelFormat{cont}{#1~#2~(\asbuk{ContinuedFloat})}
+\usepackage{color,colortbl,xcolor,transparent} % работа с цветом
+	\definecolor{BlueGreen}{RGB}{49,152,255} % цвета ссылок
+	\definecolor{Violet}{RGB}{120,80,120}
+\usepackage{titlepic} % Логотип на титульной странице
+
+%~~~~~~~~~~Разное~~~~~~~~~~
+\usepackage{ifthen} % Включаем логику \ifthenelse{условие проверки}{если НЕ истина}{если истина}
+\usepackage{epigraph} % Вставка эпиграфа
+\usepackage{qrcode} % Поддержка QR-code
+\usepackage[section,above,below]{placeins} % указывает \FloatBarrier перед каждым \section автоматически
+\usepackage{afterpage} % вставить барьер сразу после начала новой страницы
+\usepackage{flafter} % помещает флоат ПОСЛЕ первой ссылки на него
+\usepackage[
+	type={CC},
+	modifier={by-nc-sa},
+	version={4.0},
+	]{doclicense} % Лицензия
+
+%~~~~~~~~~~Таблицы~~~~~~~~~~
+\usepackage{array} % работа с таблицами
+\usepackage{booktabs} % возможность набирать красивые таблицы
+
+%~~~~~~~~~~Библиография~~~~~~~~~~
+\usepackage[round,sort,numbers]{natbib}
+\bibliographystyle{unsrt} % Стиль библиографии
+	\makeatletter
+	\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку
+	\makeatother
+
+%~~~~~~~~~~Ссылки~~~~~~~~~~
+\usepackage[
+	unicode=true,
+	colorlinks=true,
+	urlcolor=BlueGreen,
+	linkcolor=Violet,
+	citecolor=Violet]{hyperref}
+
+\pdfsuppresswarningpagegroup=1
+
+\newcounter{SamosbrosNoName}\setcounter{SamosbrosNoName}{0}
+
+\begin{document}                                     % начало документа
+
+\title{Самосбросы}
+\date{}
+\author{А.В. Дедиков}
+
+\maketitle
+
+Самосбросы это особая группа узлов, обладающих уникальными свойствами. Они быстроразвязывающиеся и охватывают опору всегда сложенным вдвое концом. В связи с этим, в отличие от обычных быстроразвязывающихся узлов, после развязывания не нужно протягивать вокруг опоры ходовой конец, который может быть достаточно длинным и его может где-нибудь там защемить. Такой узел можно сравнить с человеческой кистью. То есть - разжал пальцы, отпустил, и удерживаемый предмет упал.
+
+Практически все они очень легко развязываются. Это свойство можно рассматривать и как преимущество, и как недостаток этих узлов. Постоянно существует опасность случайно дернуть за ходовой конец и тем самым развязать узел.
+
+\section{Ведерный узел}
+
+Простейший самосброс.
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Vederny_1_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Vederny_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Vederny_1_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Vederny_2}}
+		}
+	\caption{Ведерный узел.}\label{ris:Vederny_1}
+\end{figure}
+
+\section{Ведерный Усовершенствованный}
+
+\begin{figure}[H]\centering
+	\subfloat[Одинарный]{\label{ris:Vederny_2_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.3\linewidth]{Samosbrosy/Vederny_2_1}}
+		}
+\hfill
+	\subfloat[Двойной]{\label{ris:Vederny_2_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.3\linewidth]{Samosbrosy/Vederny_2_2}}
+		}
+\hfill
+	\subfloat[Двойной со шлагом]{\label{ris:Vederny_2_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Vederny_2_3}}
+		}
+	\caption{Усовершенствованный Ведерный узел.}\label{ris:Vederny_2}
+\end{figure}
+
+Уменьшить легкость развязывания, особенно на толстых опорах, можно увеличив силу трения при выдергивании ходового конца. Для этого просто нужно уменьшить диаметр петли, в которую он проходит, перекрутив ее один или несколько раз. Радикально решить эту проблему можно сделав последнюю петлю более длинной и обвязав ее полуштыком вокруг коренного конца в качестве предохранителя. Привести завязанный таким образом узел в боевое состояние перед сбросом совсем не сложно, но не всегда возможно.
+
+\section{Гачный самосброс}
+
+\begin{figure}[H]\centering
+\setcounter{subfigure}{0}
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.25\linewidth]{Samosbrosy/Hitch_to_the_eye_of_a_hook_1}}}
+		\end{center}
+	\end{minipage}
+\caption{Гачный самосброс.}
+\label{ris:Gachny_samosbros}
+\end{figure}
+
+Самосброс на базе Hitch to the eye of a hook. Проушина крюка должна быть определенного размера, в идеале - чуть больше двух диаметров троса.
+
+\section{Самосброс из Быстроразвязывающегося Простого узла}
+
+Узел вяжется из Быстроразвязывающегося Простого узла. Он оборачивается вокруг опоры, проходит внутрь образованного коренным концом простого узла и фиксируется ходовым концом. Среди самосбросов этот узел уникален тем, что он не обязательно должен плотно охватывать опору, то есть может свободно свисать на достаточно длинных петлях.
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Arbor_samosbros_1_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Arbor_samosbros_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Arbor_samosbros_1_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Arbor_samosbros_2}}
+		}
+\end{figure}
+
+Можно фиксировать петлю и другим концом (при этом коренной становится ходовым, а ходовой коренным), но получившийся узел при затягивании перекашивается и теряет свою уникальную особенность свободного свисания.
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Arbor_samosbros_2_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.31\linewidth]{Samosbrosy/Arbor_samosbros_3}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Arbor_samosbros_2_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.35\linewidth]{Samosbrosy/Arbor_samosbros_4}}
+		}
+	\caption{Самосброс из Быстроразвязывающегося Простого узла.}\label{ris:Arbor_samosbros}
+\end{figure}
+
+\section{Пиратский узел}
+
+Это, пожалуй, самый известный из самосбросов. Его иногда называют Разбойничьим. Английские названия - Thief Knot, Draw hitch, Highwayman's Hitch.
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Piratsky_1_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.3\linewidth]{Samosbrosy/Piratsky}}
+		}
+\hfill
+	\subfloat[Завязывание]{\label{ris:Piratsky_1_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.36\linewidth]{Samosbrosy/Piratsky_1}}
+		}
+\end{figure}
+
+К завязыванию этого и аналогичных ему узлов нужно подходить с особой тщательностью. Формируется петля, коренной конец оборачивается вокруг опоры и петлей проходит в ранее созданную. После этого уже ходовой конец оборачивается вокруг опоры и еще одной (третьей) петлей проходит в петлю коренного конца, фиксируя ее и тем самым замыкая весь узел в замок. Таким образом, достаточно легко потянуть за ходовой конец, чтобы узел просто развалился, разошелся по разным сторонам опоры. Нужно отметить, что Пиратский узел на опоре, которая диаметром значительно больше диаметра веревки, может вывернуться и потерять свое зажимное свойство.
+
+Так как узел несимметричный, то он может быть Левым (Леворуким) и Правым (Праворуким).
+
+\begin{figure}[H]\centering
+	\subfloat[Левый]{\label{ris:Piratsky_1_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Piratsky_left}}
+		}
+\hfill
+	\subfloat[Правый]{\label{ris:Piratsky_1_4}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Piratsky_right}}
+		}
+	\caption{Пиратский узел.}\label{ris:Piratsky}
+\end{figure}
+
+\section{Пиратский с перекрутом}
+
+\begin{figure}[H]\centering
+	\subfloat[С одиночным перекрутом]{\label{ris:Perekrut_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Perekrut}}
+		}
+\hfill
+	\subfloat[С двойным перекрутом]{\label{ris:Perekrut_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Perekrut_1}}
+		}
+	\caption{Пиратский с перекрутом.}\label{ris:Perekrut}
+\end{figure}
+
+Усовершенствование заключается в том, что из первой петли, по сути являющейся открытой, путем перекручивания формируется закрытая петля. На толстых опорах можно сделать не один, а несколько перекрутов.
+
+\section{Пиратский Усовершенствованный}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Piratsky_3_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.36\linewidth]{Samosbrosy/Piratsky_4}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Piratsky_3_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.3\linewidth]{Samosbrosy/Piratsky_5}}
+		}
+	\caption{Пиратский Усовершенствованный.}\label{ris:Piratsky_3}
+\end{figure}
+
+В данном случае ходовой конец проходит внутри петель, более плотно прижимая к опоре коренной конец, тем самым усиливая трение, в связи с чем узел менее склонен к проворачиванию и может быть завязан на более толстых опорах. Завязывать этот узел нужно очень внимательно, тщательно следя за равномерным обжиманием петель. Вытягивание ходового конца для развязывания более трудное, чем у обычного Пиратского узла.
+
+\section{Привязной узел}
+
+На сайте \href{https://cavvysavvy.tsln.com/blog/knots-tying-horse/}{CavvySavvy.com} такой узел предлагают использовать для привязывания лошадей к коновязи.
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:CavvySavvy_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.32\linewidth]{Samosbrosy/CavvySavvy}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:CavvySavvy_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.34\linewidth]{Samosbrosy/CavvySavvy_1}}
+		}
+	\caption{Привязной узел.}\label{ris:CavvySavvy}
+\end{figure}
+
+\section{Heather Smith Thomas}
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.25\linewidth]{Samosbrosy/Heather_Smith_Thomas_3}}}
+		\end{center}
+	\end{minipage}
+\caption{Heather Smith Thomas.}
+\label{ris:Heather_Smith_Thomas}
+\end{figure}
+
+В статье, опубликованной в журнале \href{http://eclectic-horseman.com/}{Eclectic Horseman Magazine} этот узел тоже предлагается использовать для привязывания лошадей к коновязи.
+
+\section{Упрощенный Heather Smith Thomas}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Heather_Smith_Thomas_prosto_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Heather_Smith_Thomas}}
+		}
+\hfill
+	\subfloat[Завязывание]{\label{ris:Heather_Smith_Thomas_prosto_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Heather_Smith_Thomas_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Heather_Smith_Thomas_prosto_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Heather_Smith_Thomas_2}}
+		}
+	\caption{Упрощенный Heather Smith Thomas.}\label{ris:Heather_Smith_Thomas_prosto}
+\end{figure}
+
+На тонкой основе перекруты на первоначальной петле делать не обязательно.
+
+\section{Злодейский узел}
+
+\begin{figure}[H]\centering
+	\subfloat[Первый вариант]{\label{ris:Zlodeysky_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Zlodeysky}}
+		}
+\hfill
+	\subfloat[Второй вариант]{\label{ris:Zlodeysky_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Zlodeysky_2}}
+		}
+\hfill
+	\subfloat[Третий вариант]{\label{ris:Zlodeysky_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Zlodeysky_1}}
+		}
+\hfill
+	\subfloat[Четвертый вариант]{\label{ris:Zlodeysky_4}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5.5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Zlodeysky_3}}
+		}
+	\caption{Злодейский узел.}\label{ris:Zlodeysky}
+\end{figure}
+
+Практически полная копия Пиратского узла. Только завершающая петля заходит с перекрутом. Существует несколько вариантов. Разница в том как петли охватывают коренной и ходовой концы. Первый вариант развязывается легче всех, последний - надежнее остальных.
+
+На мой взгляд, первые два варианта вообще можно считать неправильно завязанными. Весь смысл перекрута фиксирующей петли в том, чтобы она сама себя поджимала для более тугого развязывания, тем самым уменьшая риск случайного раздергивания, как в третьем и четвертом вариантах.
+
+Все эти варианты могут быть как Левыми, так и Правыми, то есть фактически получаем восемь разновидностей узла.
+
+\section{Tumble Hitch}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Tumble_Hitch_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.31\linewidth]{Samosbrosy/Tumble_Hitch}}
+		}
+\hfill
+	\subfloat[Завязывание]{\label{ris:Tumble_Hitch_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.35\linewidth]{Samosbrosy/Tumble_Hitch_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Tumble_Hitch_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Tumble_Hitch_2}}
+		}
+	\caption{Tumble Hitch.}\label{ris:Tumble_Hitch}
+\end{figure}
+
+В вольном переводе на русский - Падающая сцепка. Другие названия на английском - Better Highwayman's hitch, Getaway hitch Bank, Robbers Knot или Quick-release knot. Внешне похожий на Пиратский, только петли проходят друг в друга и обжимаются несколько в ином порядке. Но и у этого узла остается проблема случайного раздергивания петель за ходовой конец.
+
+\section{Усовершенствованный Tumble Hitch}
+
+\begin{figure}[H]\centering
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.3\linewidth]{Samosbrosy/Tumble_Hitch_3}}}
+		\end{center}
+	\end{minipage}
+\caption{Усовершенствованный Tumble Hitch.}
+\label{ris:Tumble_Hitch_var}
+\end{figure}
+
+Последняя петля ходового конца проходит между предыдущими петлями несколько по другому. Этим достигается наилучшая его фиксация и узел становится менее склонен к случайному развязыванию. Как и Усовершенствованный Пиратский узел (рис.~\ref{ris:Piratsky_3}), этот узел необходимо завязывать тщательно следя за равномерным обжиманием петель.
+
+\section{Tumble Hitch с затягивающейся петлей}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Samosbros_Simple_Noose_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Samosbros_Simple_Noose}}
+		}
+\hfill
+	\subfloat[Завязывание]{\label{ris:Samosbros_Simple_Noose_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Samosbros_Simple_Noose_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Samosbros_Simple_Noose_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Samosbros_Simple_Noose_2}}
+		}
+	\caption{Tumble Hitch с затягивающейся петлей.}\label{ris:Samosbros_Simple_Noose}
+\end{figure}
+
+Если рассматривать самосбросы как системы из нескольких узлов, то можно и далее их видоизменять. В Tumble Hitch и в пиратских узлах, петлю, на которой мы ранее делали твисты, можно заменить, например, на простую затягивающуюся. Затягивающаяся петля более плотно обожмет проходящую в нее петлю, что придаст дополнительную надежность всей системе. Петля может быть и незатягивающейся, ее можно даже заменить железным кольцом или карабином. Допускаю, что в каких-то случаях это может быть оправдано\dots
+
+\addtocounter{SamosbrosNoName}{1}
+
+\section{Самосброс без названия \arabic{SamosbrosNoName}}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Piratsky_2_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Piratsky_2}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Piratsky_2_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Piratsky_3}}
+		}
+	\caption{Самосброс без названия \arabic{SamosbrosNoName}.}\label{ris:Piratsky_2}
+\end{figure}
+
+\addtocounter{SamosbrosNoName}{1}
+
+Это узел описан на сайте \href{http://prouzli.ru}{Prouzli.ru}. Там его почему-то называют “Пиратский узел - Самосброс Жукова”. Но настоящий Самосброс Жукова совершенно другой (рис.~\ref{ris:Zhukov}).
+
+На мой взгляд, это вариант Tumble Hitch (рис.~\ref{ris:Tumble_Hitch}), только ходовой конец вынесен на другую сторону опоры. Последнюю петлю нужно оставлять достаточно длинной, чтобы коренной конец при переменной нагрузке не выдернул ее из замка.
+
+\section{Самосброс без названия \arabic{SamosbrosNoName}}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Piratsky_4_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Piratsky_6}}
+		}
+\hfill
+	\subfloat[Затягивание]{\label{ris:Piratsky_4_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=6cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Piratsky_6_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Piratsky_4_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Piratsky_6_2}}
+		}
+	\caption{Самосброс без названия \arabic{SamosbrosNoName}.}\label{ris:Piratsky_4}
+\end{figure}
+
+В последней фазе завязывания нижний шлаг ходового конца, охватывающий коренной конец, нужно подтянуть к верхней фиксирующей петле.
+
+\section{Самосброс Жукова}
+
+Оригинальная cамосбросная система, ее изобретатель - Илья Жуков из подмосковной Балашихи. Узел остроумен, практичен и удивительно удобен. Вязка начинается так же, как и в Пиратском узле, но далее принципиально отличается от него, так как третья петля вообще отсутствует. Фиксация первой петли осуществляется другим способом. Фактически, он представляет из себя удачное сочетание двух узлов - начала пиратского и штыка. Именно штык и является фиксирующим элементом узла. При достаточно хорошо загруженном коренном конце, можно даже использовать сразу оба конца, коренной и ходовой, так как штык будет удерживать петлю тем лучше, чем больше он загружен. В то же время, снятая с коренного конца нагрузка, позволит без всяких проблем распустить всю систему после работы.
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Zhukov_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Zhukov}}
+		}
+\hfill
+	\subfloat[Затягивание]{\label{ris:Zhukov_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=7cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Zhukov_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Zhukov_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Zhukov_2}}
+		}
+	\caption{Самосброс Жукова.}\label{ris:Zhukov}
+\end{figure}
+
+Для дополнительной надежности коренным концом можно сделать еще несколько полуштыков вокруг петли ходового конца. В принципе, не обязательно использовать именно штык. Штык придает лаконичность узлу, но тут может подойти любой другой охватывающий узел. Главное условие - чтобы при снятии нагрузки он не оставался сильно затянутым, иначе будет сложно вытащить ходовой конец и распустить узел.
+
+\section{Пиратский Таллинский}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Tallinsky_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=4.5cm]
+		{\centering
+			\includesvg[width=0.32\linewidth]{Samosbrosy/Tallinsky}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Tallinsky_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=4.5cm]
+		{\centering
+			\includesvg[width=0.34\linewidth]{Samosbrosy/Tallinsky_1}}
+		}
+	\caption{Пиратский Таллинский.}\label{ris:Tallinsky}
+\end{figure}
+
+В порту Таллина моряки раньше вязали такой самосброс и называли его пиратским узлом.
+
+\section{Горизонтальный Самосброс}
+
+\begin{figure}[H]\centering
+	\subfloat[Завязывание]{\label{ris:Arbor_fast_samosbros_1_1}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5cm]
+		{\centering
+			\includesvg[width=0.29\linewidth]{Samosbrosy/Arbor_fast_1}}
+		}
+\hfill
+	\subfloat[Результат]{\label{ris:Arbor_fast_samosbros_1_2}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5cm]
+		{\centering
+			\includesvg[width=0.37\linewidth]{Samosbrosy/Arbor_fast_2}}
+		}
+\hfill
+	\subfloat[Одинарный перекрут.]{\label{ris:Arbor_fast_samosbros_1_3}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Arbor_fast_samosbros_1}}
+		}
+\hfill
+	\subfloat[Двойной перекрут.]{\label{ris:Arbor_fast_samosbros_1_4}
+	\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5,height=5cm]
+		{\centering
+			\includesvg[width=0.33\linewidth]{Samosbrosy/Arbor_fast_samosbros_2}}
+		}
+	\caption{Горизонтальный Самосброс.}\label{ris:Arbor_fast_samosbros}
+\end{figure}
+
+Специфический узел. Самосбросом его можно назвать только условно, так как будучи хорошо и аккуратно затянутым, распускается очень тяжело. В связи этим его можно использовать на скользких веревках. На обычных веревках при тяге за ходовой конец может вообще не развязаться.
+
+\section{Застежка-молния}
+
+\begin{figure}[H]\centering
+\setcounter{subfigure}{0}
+\addtocounter{figure}{1}
+	\begin{minipage}{1\linewidth}
+		\begin{center}
+			\tcbox[enhanced jigsaw,colframe=black,opacityframe=0.5,opacityback=0.5]
+			{\centering{\includesvg[width=0.6\linewidth]{Samosbrosy/Latching_1}}}
+		\end{center}
+	\end{minipage}
+\addtocounter{figure}{-1}
+\caption{Застежка-молния.}
+\label{ris:Latching}
+\end{figure}
+
+Узел может быть сколь угодно длинным. Его можно использовать для временной фиксации чего-нибудь широкого и мягкого, например, флага или паруса.
+
+\section*{Заключение}
+
+\begin{wrapfigure}[5]{R}{0.35\linewidth}
+	\vspace{-7ex}
+	\qrcode[height=1.2in]{mailto:dedikovav+book@googlemail.com}
+\end{wrapfigure}
+
+Свои вопросы, предложения и замечания присылайте мне на e-mail. В электронной версии статьи достаточно кликнуть по QR-коду, в бумажной версии можно его просканировать с помощью мобильного телефона.
+
+\vfill
+
+\begin{center}
+	Это произведение доступно по лицензии \doclicenseNameRef \\ \doclicenseImage[imagewidth=5em]
+\end{center}
+
+\end{document}
