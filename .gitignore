@@ -1,3 +1,8 @@
+*.directory
+**/*_svg-tex.pdf
+**/*_svg-tex.pdf_tex
+ProGit
+/Материалы Узлы
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
